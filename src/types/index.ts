@@ -12,3 +12,22 @@ export interface Image {
   description: string;
   size: string;
 }
+
+export interface DockerArchitectureProps {
+  containers: Container[];
+  selectedContainer: string | null;
+}
+
+export interface ContainerCardProps {
+  container: Container;
+  onStart: (id: string) => void;
+  onStop: (id: string) => void;
+  onRemove: (id: string) => void;
+  selected: boolean;
+  onClick: () => void;
+}
+
+export interface ImageCardProps {
+  image: Image;
+  onCreateContainer: (image: Image) => void;
+}
